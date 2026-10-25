@@ -24,7 +24,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 110px;
+    scroll-padding-top: 70px;
 }
 
 body {
@@ -157,6 +157,13 @@ img {
 
 .section .eyebrow {
     text-align: center;
+}
+
+/* Individual package scroll offsets */
+#essential-package,
+#signature-package,
+#vow-package {
+    scroll-margin-top: 100px;
 }
 
 /* 03. HERO */
