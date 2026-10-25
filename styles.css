@@ -1046,12 +1046,13 @@ img {
 
 .engagement-package:hover {
     background-color: var(--header-bg);
+    transform: translateY(-6px);
 }
 
 .package-card:hover {
     background-color: var(--header-bg);
     border-color: var(--muted);
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 }
 
 /* INQUIRY FORM: SUCCESS MESSAGE */
@@ -1198,4 +1199,7 @@ color 0.25s ease,
 
 .package-card:nth-child(3) {
     transition-delay: 0.3s;
+}
+.package-card.reveal.is-visible:hover {
+    transform: translateY(-6px);
 }
