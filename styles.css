@@ -1,0 +1,1194 @@
+/*
+  THE VOW FILM CO. | STYLESHEET
+  Organized by site section. Shared styles come first; responsive overrides are near the end.
+  Main colors, fonts, and page spacing are controlled by the variables below.
+*/
+
+:root {
+    --ivory: #f7f5f0;
+    --paper: #e7e1d6;
+    --ink: #292923;
+    --muted: #77766d;
+    --line: #d9d5cb;
+    --header-bg: #c8c2b8;
+    --rose: #E4D0CE;
+    --font-editorial: "Bodoni Moda", Georgia, serif;
+    --font-clean: "Inter", Arial, sans-serif;
+    --page-padding: 7%;
+    --editorial-stroke: 0.75px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: var(--font-clean);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--ink);
+    color: var(--ivory);
+}
+
+/* 01. HEADER & NAVIGATION */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    padding: 15px var(--page-padding);
+    background: var(--header-bg);
+}
+
+.logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.logo-name {
+    font-family: var(--font-editorial);
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+}
+
+.logo-subtitle {
+    margin-top: 7px;
+    font-family: var(--font-clean);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navigation a {
+    font-size: 13px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.navigation a:hover {
+    opacity: 0.55;
+}
+
+.instagram-link img {
+    width: 25px;
+    height: 25px;
+    display: block;
+    opacity: 0.65;
+}
+
+/* 02. SHARED TYPOGRAPHY & SECTION SPACING */
+
+.section {
+    padding: 75px var(--page-padding);
+}
+
+.section h2 {
+    margin: 18px 0 15px;
+    font-family: var(--font-editorial);
+    font-size: clamp(30px, 5vw, 40px);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+    text-align: center;
+    -webkit-text-stroke: var(--editorial-stroke) currentColor;
+}
+
+.section h2 em {
+    font-weight: inherit;
+    -webkit-text-stroke: inherit;
+}
+
+.package-title {
+    margin: 0;
+    font-family: var(--font-editorial);
+    font-size: clamp(12px, 1vw, 15px);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-text-stroke: var(--editorial-stroke) currentColor;
+}
+
+.eyebrow {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.section .eyebrow {
+    text-align: center;
+}
+
+/* 03. HERO */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 04. OUR APPROACH */
+
+.approach {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 70px;
+    row-gap: 45px;
+    align-items: start;
+    background: var(--paper);
+}
+
+.approach::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+/* TODO: Add the commissioned vine background image here when ready. */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.approach > * {
+    position: relative;
+    z-index: 1;
+}
+
+.approach-heading {
+    grid-column: 1 / -1;
+}
+
+.approach-text {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.approach-text p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.approach-image {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.approach-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================
+   05. SELECTED FILMS
+========================= */
+
+.films {
+    background: var(--ivory);
+}
+
+.films-heading {
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.films-intro {
+    max-width: 520px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+}
+
+.film-card {
+    min-width: 0;
+}
+
+.film-embed {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--paper);
+}
+
+.film-embed video,
+.film-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.film-embed video {
+    display: block;
+    object-fit: cover;
+}
+
+.film-card h3 {
+    margin: 18px 0 6px;
+    font-family: var(--font-editorial);
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.film-meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* 06. WHY THE VOW */
+
+.why-us {
+    background: var(--paper);
+}
+
+.why-us-heading {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.why-us-heading h2 {
+    margin-top: 18px;
+}
+
+.why-us-content {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1fr);
+    gap: 90px;
+    align-items: center;
+}
+
+.why-us-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+
+.why-us-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.why-us-reasons {
+    display: flex;
+    flex-direction: column;
+}
+
+.why-us-reason {
+    display: grid;
+    grid-template-columns: 45px minmax(0, 1fr);
+    gap: 20px;
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+}
+
+.why-us-reason:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.reason-number {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+}
+
+.reason-content h3 {
+    margin: 0 0 12px;
+    font-family: var(--font-editorial);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.reason-content p {
+    max-width: 500px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* 07. TESTIMONIALS, READY FOR FUTURE CONTENT */
+
+.why-us-testimonials {
+    margin-top: 30px;
+    padding-top: 45px;
+    text-align: center;
+}
+
+.why-us-testimonials > .eyebrow {
+    margin-bottom: 45px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 70px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial blockquote {
+    max-width: 420px;
+    margin: 0 auto 22px;
+    font-family: var(--font-editorial);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.testimonial-attribution {
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* 08. PACKAGES */
+
+.packages-heading {
+    max-width: 760px;
+    margin: 0 auto 85px;
+    text-align: center;
+}
+
+.packages-heading h2 {
+    margin: 18px 0 22px;
+}
+
+.packages-intro {
+    max-width: 520px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.engagement-package {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 70px;
+    align-items: start;
+    padding: 38px 0 48px;
+    padding-left: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 48px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.engagement-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.engagement-info h3 {
+    margin: 16px 0;
+    font-size: clamp(28px, 3vw, 30px);
+    font-weight: 400;
+}
+
+.engagement-info .eyebrow {
+    text-align: left;
+}
+
+.package-price {
+    margin: 0;
+    font-family: var(--font-editorial);
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.engagement-details .package-price {
+    margin-bottom: 20px;
+}
+
+.wedding-collections {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.package-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 34px 27px 28px;
+    border: 1px solid var(--line);
+    background: transparent;
+}
+
+.package-card .eyebrow {
+    margin-bottom: 24px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+}
+
+.package-card h3 {
+    margin: 0 0 15px;
+    font-size: clamp(24px, 2.5vw, 30px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.package-card .package-price {
+    font-size: 27px;
+}
+
+.package-duration {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.03em;
+}
+
+.package-divider {
+    width: 100%;
+    height: 1px;
+    margin: 27px 0;
+    background: var(--line);
+}
+
+\#vow-collection-package .eyebrow {
+    margin: 8px 0 8px;
+}
+
+.vow-collection-package-divider {
+    width: 100%;
+    height: 1px;
+    margin: 8px 0 27px;
+    background: var(--line);
+}
+
+.package-features {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0;
+    margin: 0 0 36px;
+    list-style: none;
+}
+
+.package-features li {
+    position: relative;
+    padding-left: 16px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.package-features li::before {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--muted);
+    content: "";
+}
+
+.package-featured {
+    border-color: var(--header-bg);
+    background: var(--paper);
+}
+
+/* 09. INQUIRY FORM */
+
+.contact {
+    background-color: var(--paper);
+}
+
+.contact-heading {
+    max-width: 680px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.contact-heading h2 {
+    margin-bottom: 24px;
+}
+
+.contact-intro {
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.inquiry-form {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 38px 32px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.form-field-full {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    font-family: var(--font-clean);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    color: var(--ink);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+    padding: 12px 0 16px;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--font-clean);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: var(--muted);
+    opacity: 0.75;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    border-bottom-color: var(--ink);
+}
+
+.form-field textarea:focus {
+    border-color: var(--ink);
+}
+
+.form-field textarea {
+    resize: none;
+    min-height: 150px;
+    line-height: 1.8;
+    padding: 16px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: transparent;
+}
+
+.form-field input[type="date"] {
+    color: var(--muted);
+}
+
+.form-field select {
+    cursor: pointer;
+}
+
+.toggle-options {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toggle-option span {
+    display: block;
+    min-width: 70px;
+    padding: 12px 18px;
+    border: 1px solid var(--ink);
+    text-align: center;
+    font-family: var(--font-clean);
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    color: var(--muted);
+    transition: all 0.25s ease;
+}
+
+.toggle-option input:checked + span {
+    background-color: var(--muted);
+    border-color: var(--ink);
+    color: var(--ivory);
+}
+
+.toggle-option:hover span {
+    border-color: var(--ink);
+}
+
+.toggle-option input:focus-visible + span {
+    outline: 1px solid var(--ink);
+    outline-offset: 4px;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding-top: 25px;
+}
+
+.form-submit p {
+    font-family: var(--font-clean);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.inquiry-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    padding: 15px 0;
+    border: none;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-clean);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+}
+
+.inquiry-submit span {
+    font-size: 18px;
+    transition: transform 0.25s ease;
+}
+
+.inquiry-submit:hover span {
+    transform: translate(3px, -3px);
+}
+
+.inquiry-submit:focus-visible {
+    outline: 1px solid var(--ink);
+    outline-offset: 5px;
+}
+
+@media (max-width: 700px) {
+    .contact {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+    .contact-heading {
+        margin-bottom: 45px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .form-field-full {
+        grid-column: auto;
+    }
+    .form-submit {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+
+/* 10. FOOTER */
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 24px var(--page-padding);
+    background: var(--ink);
+    color: var(--ivory);
+}
+
+.site-footer .logo {
+    line-height: 1.1;
+}
+
+.site-footer .logo-name {
+    font-size: 21px;
+    letter-spacing: 0.04em;
+}
+
+.site-footer .logo-subtitle {
+    margin-top: 4px;
+    font-size: 8px;
+    letter-spacing: 0.28em;
+}
+
+.site-footer > p {
+    margin: 0;
+    color: var(--header-bg);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.site-footer .copyright {
+    flex-shrink: 0;
+    font-size: 10px;
+    text-align: right;
+}
+
+/* 11. TABLET LAYOUT */
+
+@media (max-width: 1000px) {
+    .why-us-content {
+        gap: 45px;
+    }
+    .wedding-collections {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .package-featured {
+        background: transparent;
+        border-color: var(--line);
+    }
+    .package-card:last-child {
+        grid-column: 1 / -1;
+    }
+    .package-card:last-child .package-description {
+        min-height: 0;
+    }
+
+}
+
+/* 12. MOBILE LAYOUT */
+
+@media (max-width: 700px) {
+    :root {
+--page-padding: 6%;
+    }
+    html {
+        scroll-padding-top: 145px;
+    }
+    .site-header {
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+    .logo-name {
+        font-size: 24px;
+    }
+    .navigation {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        width: 100%;
+    }
+    .navigation a {
+        font-size: 9px;
+    }
+    .hero {
+        height: calc(100vh - 160px);
+        min-height: 500px;
+    }
+    .section {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+    .section h2 {
+        font-size: clamp(38px, 10vw, 54px);
+    }
+    .approach {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+    .approach-heading,
+    .approach-text,
+    .approach-image {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    .approach-image {
+        height: auto;
+    }
+    .approach-image img {
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+    .films-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+    .films-heading {
+        margin-bottom: 35px;
+    }
+    .why-us {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .why-us-heading {
+        margin-bottom: 50px;
+    }
+    .why-us-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .why-us-image {
+        aspect-ratio: 4 / 5;
+    }
+    .why-us-reason {
+        grid-template-columns: 35px minmax(0, 1fr);
+        gap: 15px;
+        padding: 25px 0;
+    }
+    .reason-content h3 {
+        font-size: 25px;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+    .packages {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .packages-heading {
+        margin-bottom: 55px;
+    }
+    .wedding-collections {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .package-card:last-child {
+        grid-column: auto;
+    }
+    .package-card {
+        padding: 30px 24px 25px;
+    }
+    .package-card h3 {
+        font-size: 32px;
+    }
+    .package-card .package-description {
+        min-height: 0;
+    }
+    .packages-footer {
+        margin-top: 40px;
+    }
+    .elopement-package .engagement-info h3 {
+        white-space: normal;
+    }
+    .site-footer {
+        flex-direction: column;
+        gap: 22px;
+        text-align: center;
+    }
+    .site-footer .copyright {
+        text-align: center;
+    }
+
+}
+
+/* PACKAGE ADD-ON: ELOPEMENTS & INTIMATE WEDDINGS */
+
+.elopement-package {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
+    gap: 40px;
+    width: 100%;
+    margin: 50px 0 0;
+    padding: 38px 0;
+    padding-left: 24px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.elopement-title {
+        margin: 0;
+        font-family: var(--font-editorial);
+        font-size: clamp(12px, 1vw, 15px);
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        line-height: 1.4;
+        text-align: left;
+        text-transform: uppercase;
+        -webkit-text-stroke: var(--editorial-stroke) currentColor;
+    }
+
+.elopement-package .engagement-info {
+    min-width: 0;
+}
+
+.elopement-package .engagement-info h3 {
+    white-space: nowrap;
+    font-size: clamp(22px, 2.2vw, 32px);
+}
+
+.elopement-package .engagement-details {
+    min-width: 0;
+    width: 100%;
+}
+
+/* ELOPEMENT DESCRIPTION */
+
+.elopement-package .package-description {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* PACKAGE CARD HOVER EFFECTS */
+
+.engagement-package,
+.package-card {
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.engagement-package:hover {
+    background-color: var(--header-bg);
+}
+
+.package-card:hover {
+    background-color: var(--header-bg);
+    border-color: var(--muted);
+    transform: translateY(-4px);
+}
+
+/* INQUIRY FORM: SUCCESS MESSAGE */
+.inquiry-success {
+    padding: 45px 0;
+    border-top: 1px solid var(--line);
+}
+
+.inquiry-success[hidden] {
+    display: none;
+}
+
+.inquiry-success h3 {
+    margin: 18px 0;
+    font-family: var(--font-editorial);
+    font-size: clamp(25px, 2.5vw, 25px);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.inquiry-success > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.inquiry-reset {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+    padding: 15px 0;
+    border: none;
+    background: transparent;
+    color: var(--ink);
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+}
+
+.inquiry-reset span {
+    font-size: 18px;
+    transition: transform 0.25s ease;
+}
+
+.inquiry-reset:hover span {
+    transform: translate(3px, -3px);
+}
+
+.inquiry-reset:focus-visible {
+    outline: 1px solid var(--ink);
+    outline-offset: 5px;
+}
+
+.inquiry-submit:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+/* LINKS FROM FILM CREDITS TO PACKAGES */
+
+.film-package-link {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    transition:
+color 0.25s ease,
+        letter-spacing 0.25s ease;
+}
+
+.film-package-link:hover {
+    color: var(--muted);
+    letter-spacing: 0.16em;
+}
+
+.film-package-link:focus-visible {
+    outline: 1px solid var(--ink);
+    outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+    .elopement-package {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+    .elopement-package .engagement-info h3 {
+        white-space: normal;
+    }
+
+}
+
+/* =========================
+   SCROLL REVEAL ANIMATIONS
+========================= */
+
+.js-scroll-reveal .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js-scroll-reveal .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional stagger for elements that should appear in sequence */
+.js-scroll-reveal .reveal[data-delay="1"] {
+    transition-delay: 0.12s;
+}
+
+.js-scroll-reveal .reveal[data-delay="2"] {
+    transition-delay: 0.24s;
+}
+
+.js-scroll-reveal .reveal[data-delay="3"] {
+    transition-delay: 0.36s;
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .js-scroll-reveal .reveal,
+    .js-scroll-reveal .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Stagger the wedding package cards */
+
+.package-card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.package-card:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.package-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
