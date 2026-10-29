@@ -862,22 +862,37 @@ img {
         scroll-padding-top: 145px;
     }
     .site-header {
-        flex-direction: column;
-        gap: 25px;
-        padding-top: 22px;
-        padding-bottom: 22px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
     .logo-name {
         font-size: 24px;
     }
     .navigation {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px 20px;
-        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        gap: 12px;
+        width: auto;
+        min-width: 0;
     }
     .navigation a {
-        font-size: 9px;
+        font-size: 8px;
+        white-space: nowrap;
+        letter-spacing: 0.08em;
+    }
+    .navigation .instagram-link {
+        flex-shrink: 0;
+    }
+    .instagram-link img {
+        width: 18px;
+        height: 18px;
     }
     .hero {
         height: calc(100vh - 160px);
@@ -939,6 +954,24 @@ img {
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 45px;
+    }
+    .engagement-package {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px 0;
+        padding-left: 0;
+        padding-bottom: 28px;
+        margin-bottom: 32px;
+    }
+    .engagement-package .engagement-info h3 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+    .engagement-package .engagement-details {
+        min-width: 0;
+    }
+    .engagement-package .package-features {
+        margin-bottom: 0;
     }
     .packages {
         padding-top: 80px;
